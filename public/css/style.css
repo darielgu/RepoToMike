@@ -1,0 +1,163 @@
+/* General body styling */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #121212;
+    color: #FFFFFF;
+}
+
+/* Container styling */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0; /* Remove padding from the container to avoid misalignment */
+}
+
+/* Output area */
+#output {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    padding-bottom: 120px; /* Ensure the output doesn't overlap with the prompt bar */
+    box-sizing: border-box;
+}
+
+/* Response container styling */
+.response-container {
+    margin-bottom: 20px;
+}
+
+/* Interaction buttons */
+.interaction-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.interaction-container button {
+    margin-right: 5px;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    background-color: #333333;
+    color: #FFFFFF;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.interaction-container button:hover {
+    background-color: #555555;
+}
+
+/* Divider styling */
+.divider {
+    border: 0;
+    height: 1px;
+    background: #555555;
+    margin: 20px 0;
+}
+
+/* Prompt bar styling */
+.prompt-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    padding: 15px;
+    box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+/* Form styling within the prompt bar */
+.prompt-bar form {
+    width: 100%;
+    max-width: 1200px; /* Optional: Control the max width of the form for large screens */
+    display: flex;
+    justify-content: center;
+}
+
+/* Input styling */
+.prompt-input {
+    flex: 1; /* Make the input take up the remaining space */
+    background-color: #333333;
+    border: none;
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.prompt-input:focus {
+    outline: none;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Button styling */
+.btn-submit {
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 50px;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, #182848, #4b6cb7);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 600px) {
+    .prompt-bar form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .prompt-input {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .btn-submit {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #output {
+        padding: 10px;
+        padding-bottom: 140px; /* Adjust for the larger prompt bar on mobile */
+    }
+
+    .interaction-container button {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .container h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}
